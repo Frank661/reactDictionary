@@ -3,14 +3,14 @@ import React from 'react'
 import './header.css';
 import categories from '../../data/category'
 
-export const Header = ({ setCategory, category, word, setWord }) => {
+export const Header = ({ setCategory, category, word, setWord, LightMode }) => {
 
 	const darkTheme = createTheme({
 		palette: {
 			primary:{
-				main: '#fff'
+				main:LightMode? "#000": "#fff"
 			},
-			type: 'dark',
+			type:LightMode? 'light': 'dark'
 		},
 	  });
 
@@ -18,7 +18,6 @@ export const Header = ({ setCategory, category, word, setWord }) => {
 		setCategory(language);
 		setWord("")
 	  }
-
 
 	return (
 		<div className="header">
